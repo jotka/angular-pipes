@@ -5,22 +5,21 @@ import { registerLocaleData } from '@angular/common';
 import  localeEs  from '@angular/common/locales/es';
 registerLocaleData(localeEs);
 
-import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
-import { DomSeguroPipe } from './pipes/dom-seguro.pipe';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { PasswordPipe } from './pipes/password.pipe';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CapitalizadoPipe,
-    DomSeguroPipe,
-    PasswordPipe,
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [ { provide: LOCALE_ID, useValue: 'es' } ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        CapitalizePipe,
+        PasswordPipe,
+    ],
+    imports: [
+        BrowserModule
+    ],
+    providers: [{provide: LOCALE_ID, useValue: 'en'}],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

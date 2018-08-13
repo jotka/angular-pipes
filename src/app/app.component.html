@@ -1,135 +1,133 @@
 <div class="container">
-  <br>
-  <h1>Pipes</h1>
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Variable</th>
-        <th scope="col">Pipe</th>
-        <th scope="col">Producto</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td> {{ nombre }} </td>
-        <td> uppercase </td>
-        <td> {{ nombre | uppercase }}</td>
-      </tr>
-      <tr>
-        <td> {{ nombre }} </td>
-        <td> lowercase </td>
-        <td> {{ nombre | lowercase }}</td>
-      </tr>
-      <tr>
-        <td> {{ nombre }} </td>
-        <td> slice:3 </td>
-        <td> {{ nombre | slice:3 }}</td>
-      </tr>
-      <tr>
-        <td> {{ nombre }} </td>
-        <td> slice:0:3 </td>
-        <td> {{ nombre | slice:0:3 }}</td>
-      </tr>
-      <tr>
-        <td> {{ arreglo }} </td>
-        <td> slice:1:5 </td>
-        <td> {{ arreglo | slice:1:5 }}</td>
-      </tr>
-      <tr>
-        <td> {{ PI }} </td>
-        <td> number:'3.0-0' </td>
-        <td> {{ PI | number:'3.0-0' }}</td>
-      </tr>
-      <tr>
-        <td> {{ PI }} </td>
-        <td> number:'1.2-0' </td>
-        <td> {{ PI | number:'1.0-2' }}</td>
-      </tr>
-      <tr>
-        <td> {{ numero }} </td>
-        <td> percent </td>
-        <td> {{ numero | percent }}</td>
-      </tr>
-      <tr>
-        <td> {{ numero }} </td>
-        <td> percent:'2.2-2' </td>
-        <td> {{ numero | percent:'2.2-2' }}</td>
-      </tr>
-      <tr>
-        <td> {{ salario }} </td>
-        <td> currency </td>
-        <td> {{ salario | currency }}</td>
-      </tr>
-      <tr>
-        <td> {{ salario }} </td>
-        <td> currency:'EUR' </td>
-        <td> {{ salario | currency:'EUR' }}</td>
-      </tr>
-      <tr>
-        <td> {{ salario }} </td>
-        <td> currency:'EUR':false </td>
-        <td> {{ salario | currency:'EUR':false }}</td>
-      </tr>
-      <tr>
-        <td> {{ salario }} </td>
-        <td> currency:'EUR:'4.0-0'</td>
-        <td> {{ salario | currency:'EUR':'4.0-0' }}</td>
-      </tr>
-      <tr>
-        <td> {{ valorDePromesa }} </td>
-        <td> async </td>
-        <td> {{ valorDePromesa | async }}</td>
-      </tr>
-      <tr>
-        <td> {{ fecha }} </td>
-        <td> date </td>
-        <td> {{ fecha | date }}</td>
-      </tr>
-      <tr>
-        <td> {{ fecha }} </td>
-        <td> date:'medium' </td>
-        <td> {{ fecha | date:'medium' }}</td>
-      </tr>
-      <tr>
-        <td> {{ fecha }} </td>
-        <td> date:'MMMM - dd' </td>
-        <td> {{ fecha | date:'MMMM - dd' }}</td>
-      </tr>
-      <tr>
-        <td> {{ nombre2 }} </td>
-        <td> capitalizado </td>
-        <td> {{ nombre2 | capitalizado }}</td>
-      </tr>
-      <tr>
-        <td> {{ nombre2 }} </td>
-        <td> capitalizado:false </td>
-        <td> {{ nombre2 | capitalizado:false }}</td>
-      </tr>
-      <tr>
-        <td> {{ clave }} </td>
-        <td> password </td>
-        <td> {{ clave | password }}</td>
-      </tr>
-      <tr>
-        <td> {{ clave }} </td>
-        <td> 
-          password:{{ activar }} 
-          <br><br>
-          <button (click)=" activar = !activar " type="button" class="btn btn-outline-primary"> Activar/Desactivar</button>
-        </td>
-        <td> {{ clave | password: activar }}</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Slice</h3>
-  <ul>
-    <li *ngFor="let i of arreglo | slice:5:20 "> {{ i }}</li>
-  </ul>
-  <h3>JSON</h3> <pre>
-    {{ heroe | json}}
+    <br>
+    <h1>Pipes</h1>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Variable</th>
+            <th scope="col">Pipe</th>
+            <th scope="col">Output</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td> {{ name }}</td>
+            <td> uppercase</td>
+            <td> {{ name | uppercase }}</td>
+        </tr>
+        <tr>
+            <td> {{ name }}</td>
+            <td> lowercase</td>
+            <td> {{ name | lowercase }}</td>
+        </tr>
+        <tr>
+            <td> {{ name }}</td>
+            <td> slice:2</td>
+            <td> {{ name | slice:2 }}</td>
+        </tr>
+        <tr>
+            <td> {{ name }}</td>
+            <td> slice:0:2</td>
+            <td> {{ name | slice:0:2 }}</td>
+        </tr>
+        <tr>
+            <td> {{ array }}</td>
+            <td> slice:1:5</td>
+            <td> {{ array | slice:1:5 }}</td>
+        </tr>
+        <tr>
+            <td> {{ PI }}</td>
+            <td> number:'3.0-0'</td>
+            <td> {{ PI | number:'3.0-0' }}</td>
+        </tr>
+        <tr>
+            <td> {{ PI }}</td>
+            <td> number:'1.2-0'</td>
+            <td> {{ PI | number:'1.0-2' }}</td>
+        </tr>
+        <tr>
+            <td> {{ value }}</td>
+            <td> percent</td>
+            <td> {{ value | percent }}</td>
+        </tr>
+        <tr>
+            <td> {{ value }}</td>
+            <td> percent:'2.2-2'</td>
+            <td> {{ value | percent:'2.2-2' }}</td>
+        </tr>
+        <tr>
+            <td> {{ salary }}</td>
+            <td> currency</td>
+            <td> {{ salary | currency }}</td>
+        </tr>
+        <tr>
+            <td> {{ salary }}</td>
+            <td> currency:'EUR'</td>
+            <td> {{ salary | currency:'EUR' }}</td>
+        </tr>
+        <tr>
+            <td> {{ salary }}</td>
+            <td> currency:'EUR':false</td>
+            <td> {{ salary | currency:'EUR':false }}</td>
+        </tr>
+        <tr>
+            <td> {{ salary }}</td>
+            <td> currency:'EUR:'4.0-0'</td>
+            <td> {{ salary | currency:'EUR':'4.0-0' }}</td>
+        </tr>
+        <tr>
+            <td> {{ promiseValue }}</td>
+            <td> async</td>
+            <td> {{ promiseValue | async }}</td>
+        </tr>
+        <tr>
+            <td> {{ myDate }}</td>
+            <td> date</td>
+            <td> {{ myDate | date }}</td>
+        </tr>
+        <tr>
+            <td> {{ myDate }}</td>
+            <td> date:'medium'</td>
+            <td> {{ myDate | date:'medium' }}</td>
+        </tr>
+        <tr>
+            <td> {{ myDate }}</td>
+            <td> date:'MMMM - dd'</td>
+            <td> {{ myDate | date:'MMMM - dd' }}</td>
+        </tr>
+        <tr>
+            <td> {{ name2 }}</td>
+            <td> capitalize</td>
+            <td> {{ name2 | capitalize }}</td>
+        </tr>
+        <tr>
+            <td> {{ name2 }}</td>
+            <td> capitalize:false</td>
+            <td> {{ name2 | capitalize:false }}</td>
+        </tr>
+        <tr>
+            <td> {{ myPassword }}</td>
+            <td> password</td>
+            <td> {{ myPassword | password }}</td>
+        </tr>
+        <tr>
+            <td> {{ myPassword }}</td>
+            <td>
+                password:{{ active }}
+                <br><br>
+                <button (click)=" active = !active" type="button" class="btn btn-outline-primary">
+                    Activate/Deactivate
+                </button>
+            </td>
+            <td> {{ myPassword | password: active}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <h3>Slice</h3>
+    <ul>
+        <li *ngFor="let i of array | slice:5:20 "> {{ i }}</li>
+    </ul>
+    <h3>JSON</h3> <pre>
+    {{ heroes | json}}
   </pre>
-  <h3>Dom Seguro</h3>
-  <iframe width="420" height="315" [src]="video | domSeguro:'https://www.youtube.com/embed/'"> </iframe>
-  
-  <br><br><br><br>
 </div>
